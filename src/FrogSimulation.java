@@ -17,13 +17,17 @@ public class FrogSimulation
         int b;
         int a=0;
         int i=0;
+        System.out.print("Goal: "+maxHops+" Hops: ");
         while(a<goalDistance&&i<=maxHops&&a>-1)
         {
             i++;
             b=hopDistance();
+            System.out.print(b+" ");
             a=a+b;
         }
-        if(a>goalDistance&&i<=maxHops&&a>-1)
+        System.out.print("Total: "+a);
+        System.out.println();
+        if(a>=goalDistance&&i<=maxHops&&a>-1)
         {
             return true;
         }
@@ -35,7 +39,7 @@ public class FrogSimulation
     {
         int a=0;double re;int b=0;
 
-        while(a<=num)
+        while(a<num)
         {
             if(simulate())
             {
